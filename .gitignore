@@ -1,0 +1,25 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore the virtual environment folder
+venv/
+
+# Ignore Django migration files
+**/migrations/
+
+# Ignore the SQLite database file (change this if you're using a different database)
+db.sqlite3
+
+# Ignore node_modules folder for React
+frontend/node_modules/
+
+# Ignore build artifacts for React (e.g., create-react-app's build folder)
+frontend/build/
+
+# Ignore any environment-specific settings files
+.env
+
+# Ignore logs and other runtime files
+*.log
+*.log.*
+__pycache__/
