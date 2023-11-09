@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 // Link import to render
 import { Link } from "react-router-dom";
 // Bootstrap import to the card comps
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Card, Form, Button, FormCheck } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import { listProductDetails } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -55,11 +55,11 @@ function ProductScreen() {
                 </Card.Title>
                 <Card.Text></Card.Text>
                 <Card.Text>
-                  Descripción del producto: {product.description}
+                  Descripción del producto: {product.description} {product.dessert}
                 </Card.Text>
                 {/* Form here */}
                 <Form>
-                  {/* Form details */}
+                  {/* Add more dynamic form fields here based on your data */}
                   <Button variant="primary">Add To My Orders</Button>
                   <br></br>
                 </Form>
