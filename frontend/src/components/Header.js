@@ -47,7 +47,7 @@ function Header() {
             </Nav>
             <Nav>
 
-              <LinkContainer to='/orders'>
+              <LinkContainer to='/cart'>
                 <Nav.Link><i className="fas fa-shopping-cart"></i>ORDERS</Nav.Link>
               </LinkContainer>
 
