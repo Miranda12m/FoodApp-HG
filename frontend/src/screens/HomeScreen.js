@@ -3,14 +3,12 @@ import React, { useEffect} from 'react'
 import {Row, Col} from 'react-bootstrap'
 // Product individual
 import Product from '../components/Product';
-
+import Loader from '../components/Loader'
+import Message from '../components/Message'
 //ProductActions 
 import { listProducts } from '../actions/productActions'
-
 // Redux stuff
 import { useDispatch, useSelector } from 'react-redux'
-
-
 
 function HomeScreen() {
   const dispatch = useDispatch()
@@ -24,8 +22,8 @@ function HomeScreen() {
   return (
     <div>
         <h1>Weekly Menu Putos</h1>
-        {loading ? <h2>Loading...</h2>
-          : error ? <h3>{error}</h3>
+        {loading ? <Loader/>
+          : error ? <Message variant='danger'>{error}</Message>
             :
             <Row>
                 {products.map(product => (

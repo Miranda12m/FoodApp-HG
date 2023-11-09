@@ -8,14 +8,15 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)  # Use ImageField for product images
     description = models.TextField(null=True, blank=True)
     dessert = models.CharField(max_length=200, null=True, blank=True)
+    dessertImage = models.ImageField(null=True, blank=True)
     soupOption1 = models.CharField(max_length=200, null=True, blank=True)
-    #soupOption1image = models.ImageField(upload_to='products/', null=True, blank=True)
+    soupOption1image = models.ImageField(null=True, blank=True)
     soupOption2 = models.CharField(max_length=200, null=True, blank=True)
-    #soupOption2image = models.ImageField(upload_to='products/', null=True, blank=True)
+    soupOption2image = models.ImageField(null=True, blank=True)
     mainFoodOption1 = models.CharField(max_length=200, null=True, blank=True)
-    #mainFoodOption1image = models.ImageField(upload_to='products/', null=True, blank=True)
+    mainFoodOption1image = models.ImageField(null=True, blank=True)
     mainFoodOption2 = models.CharField(max_length=200, null=True, blank=True)
-    #mainFoodOption2image = models.ImageField(upload_to='products/', null=True, blank=True)
+    mainFoodOption2image = models.ImageField(null=True, blank=True)
     secondaryFood1 = models.CharField(max_length=200, null=True, blank=True)
     secondaryFood2 = models.CharField(max_length=200, null=True, blank=True)
     secondaryFood3 = models.CharField(max_length=200, null=True, blank=True)
@@ -24,7 +25,7 @@ class Product(models.Model):
     createAt = models.DateTimeField(auto_now_add=True)
     _id = models.AutoField(primary_key=True, editable=False)
 
-    def __str__(self): 
+    def __str__(self):  
         return self.name
     
 class Order(models.Model):
