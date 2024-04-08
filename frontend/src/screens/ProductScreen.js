@@ -1,6 +1,6 @@
 // Params import to render the individual items
 import { useParams } from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 // Link import to render
 import { Link } from "react-router-dom";
 // Bootstrap import to the card comps
@@ -42,13 +42,13 @@ function ProductScreen() {
     }));
   };
 
+  // Construct the URL with selected options as query parameters
   const handleAddToCart = () => {
-    // Construct the URL with selected options as query parameters
     const queryParams = Object.keys(selectedOptions)
       .map((optionName) => `${optionName}=${selectedOptions[optionName]}`)
       .join("&");
 
-    // Navigate to the cart screen with the selected options as query parameters
+    // Redirecto to the cart screen with the selected options as query parameters
     navigate(`/cart/${id}?${queryParams}`);
   };
 
@@ -91,13 +91,15 @@ function ProductScreen() {
                 <Card.Text></Card.Text>
                 <Card.Text>
                   Descripción del producto: {product.description}{" "}
-                  {product.dessert}
                 </Card.Text>
                 {/* Form here */}
                 <Form>
                   <Form.Group>
+                    {/* Dessert Form */}
                     <Form.Label>
                       Dessert: <strong>{product.dessert}</strong>
+                      <br></br>
+                      <img src={product.dessertImage} alt="Dessert" style={{ width: "125px", height: "145px" }}/>
                     </Form.Label>
                     <Form.Check
                       type="radio"
@@ -182,9 +184,7 @@ function ProductScreen() {
                   </Form.Group>
 
                   <Form.Group controlId="formSecondaryFood">
-                    <Form.Label>
-                      Selecciona opciones de alimentos secundarios:
-                    </Form.Label>
+                    <Form.Label>Side Dish Option 1:</Form.Label>
                     {/* Display secondary food options as checkboxes */}
                     {secondaryFoodOptions.map((option, index) => (
                       <Form.Check

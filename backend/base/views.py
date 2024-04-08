@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+# from rest_framework import viewsets
 
 from .products import products
 from .models import Product
@@ -16,11 +17,11 @@ def getRoute(request):
         '/api/products/',
         '/api/products/create/',
 
-        '/api/products/upload',
+        '/api/products/upload/',
 
         '/api/products/reviews/',
 
-        '/api/products/<id>',
+        '/api/products/<id>/',
 
         '/api/products/delete/<id>/',
         '/api/products/<update>/<id>/',
@@ -41,3 +42,7 @@ def getProduct(request, pk):
     serializer = ProductSerializer(product, many=False)
 
     return Response(serializer.data)
+
+# class ProductView(viewsets.ModelViewSet):
+#     serializer_class = ProductSerializer
+#     queryset = Product.objects.all()
